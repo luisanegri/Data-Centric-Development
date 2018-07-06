@@ -22,6 +22,14 @@ def add_recipes():
     return render_template('addrecipes.html', categories=mongo.db.categories.find(), 
     difficulty=mongo.db.difficulty.find())
     
+@app.route("/insert_recipe", methods=['POST'])
+def insert_recipe():
+    # get recipes collection
+    recipes=mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_recipes'))
+
+
 
 
 
