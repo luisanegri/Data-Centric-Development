@@ -12,6 +12,27 @@ app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:27481/cook
 mongo = PyMongo(app)
 
 
+@app.route('/')
+def index():
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+
+    return render_template('index.html')
+    
+    
+@app.route("/login", methods=['POST'])
+def login():
+    users = mongo.db.users
+    login_user = users.find_one({'name' : request.form['username']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+
+    return 'Invalid username/password combination'
+    
+    
 @app.route("/register", methods=['POST','GET'])
 def register():
     if request.method == 'POST':
@@ -24,7 +45,7 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('index'))
         
-        return 'That username already exists!'
+        return 'Username already exists. Try another one!'
 
     return render_template('register.html')
 
