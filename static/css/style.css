@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Average+Sans|Roboto:400,500,700,900');
+
+body {
+    font-family: 'Average';
+}
+
+.inline-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fafafa;
+    
+}
+
+.recipe-details {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.recipe-title-center {
+    text-align: center;
+    font-family: 'Roboto';
+}
 
 
-/*# sourceMappingURL=style.css.map */
+.glip {
+    padding-right: 5px;
+    
+}
