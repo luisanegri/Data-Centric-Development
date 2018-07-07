@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+{% for recipe in recipes %}
+    <h2 class="recipe-title-center">{{ recipe.category_name }}</h2>
+    <h3 class="recipe-title-center">{{ recipe.recipe_name }}</h3>
+    <div class="section-one">
+        <ul class="inline-list">
+    <li class="recipe-details"><i class="glip far fa-user"></i>{{ recipe.serves }}</li>
+    <li class="recipe-details"><i class="glip far fa-clock"></i>{{ recipe.time_of_prep }}</li>
+    <li class="recipe-details"><i class="glip fas fa-balance-scale"></i>{{ recipe.difficulty }}</li>
+        </ul>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <h2>Ingredients</h2>
+            <li class="recipe-ingredients">{{ recipe.ingredients }}</li>
+        </div>
+    
+        <div class="col-md-8 col-sm-8">
+            <h2>Method</h2>
+            {{ recipe.method }}
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    
+    {% endblock %}
