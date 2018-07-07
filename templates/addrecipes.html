@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>Add Recipe</h3>
+<div class="wrapper">
+    <h3 class="add-recipe-title">Add Recipe</h3>
         <form action= "{{ url_for('insert_recipe') }}" method="POST">
-        <div class="form-group">
+        <div class="form-group fg">
         <label for="category_name">Category</label>
         <select id="categories" name="category_name" class="form-control">
           <option value="" disabled selected>Choose Category</option>
@@ -14,27 +15,27 @@
         </div>
          
 
-  <div class="form-group">
+  <div class="form-group fg">
     <label for="recipe_name">Recipe Name</label>
     <input id="recipe_name" name="recipe_name" type="text" class="form-control">
   </div>
-  <div class="form-group">
+  <div class="form-group fg">
     <label for="ingredients">Ingredients</label>
     <textarea id="ingredients" name="ingredients" type="text" class="form-control"></textarea>
   </div>
-  <div class="form-group">
+  <div class="form-group fg">
     <label for="method">Method</label>
     <textarea id="method"  name="method" type="text" class="form-control"></textarea>
   </div>
-  <div class="form-group">
+  <div class="form-group fg">
     <label for="time_of_prep">Preparation Time</label>
     <input id="time_of_prep" name="time_of_prep" type="text" class="form-control">
   </div>
-  <div class="form-group">
+  <div class="form-group fg">
     <label for="serves">Serves</label>
     <input id="serves" name="serves" type="text" class="form-control">
   </div>
-   <div class="form-group">
+   <div class="form-group fg">
         <label for="difficulty_level">Difficulty Level</label>
         <select id="difficulty" name="difficulty_level" class="form-control">
           <option value="" disabled selected>Choose Difficulty Level</option>
@@ -44,14 +45,14 @@
         </select>
         </div>
  
-  <div class="form-group">
+  <div class="form-group fg">
     <label for="input_img">File input</label>
     <input type="file" id="input_img">
   </div>
 
-  <button type="submit" name="action" class="btn btn-default">Add Recipe</button>
+  <button type="submit" name="action" class="btn btn-default btn-add">Add</button>
 </form>
         
-        
+</div>      
        
 {% endblock %}
