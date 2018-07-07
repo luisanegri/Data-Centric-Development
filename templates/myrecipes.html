@@ -1,4 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h2>Welcome {{ username }} </h2>
+<h3>My Recipes</h3>
+
+    {% for recipe in recipes %}
+   
+        <div class="col-md-4">
+          <div class="well">
+              <ul>
+                <li class="recipe-details"><i class="glip far fa-user"></i>{{ recipe.serves }}</li>
+                <li class="recipe-details"><i class="glip far fa-clock"></i>{{ recipe.time_of_prep }}</li>
+                <li class="recipe-details"><i class="glip fas fa-balance-scale"></i>{{ recipe.difficulty_level }}</li>
+            </ul>
+            <h2>{{ recipe.recipe_name }}</h2>
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn">Full Recipe</a>
+          </div>
+        </div>
+  
+    {% endfor %}
+
+
 {% endblock %}
