@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %} 
 
-{% for recipe in recipes %}
+
     <h2 class="recipe-title-center">{{ recipe.category_name }}</h2>
     <h3 class="recipe-title-center">{{ recipe.recipe_name }}</h3>
     <div class="section-one">
@@ -24,6 +24,6 @@
         </div>
     </div>
 </div>
-    {% endfor %}
+    
     
     {% endblock %}
