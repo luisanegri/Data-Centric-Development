@@ -5,6 +5,7 @@ body {
     background-color: #edeeef !important;
 }
 
+/*------------------------------ readrecipe.html ------------------------------*/
 .inline-list {
     list-style-type: none;
     margin: 0;
@@ -28,18 +29,25 @@ body {
     font-family: 'Roboto';
 }
 
-
 .glip {
     padding-right: 5px;
     
 }
 
-.fg {
-    max-width: 60%;
+/*------------------------------ addrecipes.html ------------------------------*/
+
+
+.btn-add {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .add-recipe-title {
     padding-bottom: 20px;
+}
+
+.fg {
+    max-width: 60%;
 }
 
 .wrapper {
@@ -48,9 +56,9 @@ body {
     margin-right: auto;
 }
 
-.btn-add {
-    margin-bottom: 20px;
-    margin-top: 20px;
+/*------------------------------ myrecipes.html ------------------------------*/
+.my-recipes-title {
+    padding-bottom: 30px;
 }
 
 /*
@@ -61,7 +69,3 @@ body {
     top: -68px;
     left: -481px;
 }*/
-
-.my-recipes-title {
-    padding-bottom: 30px;
-}
