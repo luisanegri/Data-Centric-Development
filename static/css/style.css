@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Average+Sans|Roboto:400,500,700,900');
 
 body {
-    font-family: 'Average';
+    font-family: 'Roboto' !important;
+    background-color: #edeeef !important;
 }
 
 .inline-list {
@@ -18,6 +19,8 @@ body {
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'Average';
+    font-size: 15px;
 }
 
 .recipe-title-center {
@@ -29,4 +32,36 @@ body {
 .glip {
     padding-right: 5px;
     
+}
+
+.fg {
+    max-width: 60%;
+}
+
+.add-recipe-title {
+    padding-bottom: 20px;
+}
+
+.wrapper {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-add {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/*
+.add-icon {
+    font-size: 30px;
+    color: #62a5a1;
+    position: relative;
+    top: -68px;
+    left: -481px;
+}*/
+
+.my-recipes-title {
+    padding-bottom: 30px;
 }
