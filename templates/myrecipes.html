@@ -6,6 +6,20 @@
 <a href="{{url_for('add_recipes')}}"><i class="fas fa-plus-circle add-icon"></i></a>
 
 <div class="row">
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Categories
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      {% for category in categories %}
+      <a class="dropdown-item" href="{{url_for('get_recipes', category_id=category._id)}}">{{category.category_name}}</a>
+      {% endfor %}
+    </div>
+    
+  </div>
+</div>
+<div class="row">
   <div class="card-group">
     {% for recipe in recipes %} 
   <div class="col-sm-6 col-xs-12">

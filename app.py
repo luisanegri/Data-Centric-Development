@@ -38,6 +38,8 @@ def insert_recipe():
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
 
+
+
 @app.route("/read_recipe/<recipe_id>")
 def read_recipe(recipe_id):
     the_recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -72,6 +74,23 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
+
+
+@app.route("/get_categories/<category_id>")
+def get_categories(category_id):
+    the_category=mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    all_categories=mongo.db.categories.find()
+    return redirect(url_for('get_recipes', category=the_category, categories=all_categories))
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
         app.run(host=os.environ.get('IP'),
