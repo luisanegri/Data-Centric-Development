@@ -5,21 +5,34 @@
 <h3 class="my-recipes-title">My Recipes</h3> 
 <a href="{{url_for('add_recipes')}}"><i class="fas fa-plus-circle add-icon"></i></a>
 
-    {% for recipe in recipes %}
-   
-        <div class="col-md-4">
-          <div class="well">
-              <ul>
-                <li class="recipe-details"><i class="glip far fa-user"></i>{{ recipe.serves }}</li>
-                <li class="recipe-details"><i class="glip far fa-clock"></i>{{ recipe.time_of_prep }}</li>
-                <li class="recipe-details"><i class="glip fas fa-balance-scale"></i>{{ recipe.difficulty_level }}</li>
-            </ul>
-            <h4>{{ recipe.recipe_name }}</h4>
-            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn">Full Recipe</a>
-          </div>
+<div class="row">
+  <div class="card-group">
+    {% for recipe in recipes %} 
+  <div class="col-sm-6 col-xs-12">
+    <div class="card">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
+      <div class="row">
+        <div class="col-md-2">
+            <div class="recipe-details"><i class="glip far fa-user"></i> {{recipe.serves }}</div>
         </div>
-  
-    {% endfor %}
+        <div class="col-md-6">
+            <div class="recipe-details"><i class="glip far fa-clock"></i>{{recipe.time_of_prep}}</div>
+        </div>
+        <div class="col-md-4">
+            <div class="recipe-details"><i class="glip fas fa-balance-scale"></i>{{recipe.difficulty_level}}</div>
+        </div>
+      </div>  
+          <div class="c-footer" style="text-align: center">
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Get Full Recipe</a>
+          </div>
+      </div>  
+    </div>
+  </div>
+  {% endfor %}  
+</div>
+</div>
+    
 
 
 {% endblock %}
