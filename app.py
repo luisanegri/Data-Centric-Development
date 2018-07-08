@@ -45,6 +45,31 @@ def read_recipe(recipe_id):
     return render_template('readrecipe.html', recipe=the_recipe, categories=all_categories)
 
 
+
+@app.route("/edit_recipe/<recipe_id>", methods=['POST'])
+def edit_recipe(recipe_id):
+    the_recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_categories=mongo.db.categories.find()
+    all_dif_levels=mongo.db.difficulty.find()
+    return render_template('editrecipe.html', recipe=the_recipe, categories=all_categories, difficulty=all_dif_levels)
+    
+@app.route("/update_recipe/<recipe_id>", methods=['POST'])
+def update_recipe(recipe_id):
+    recipes=mongo.db.recipes
+    recipes.update({"_id": ObjectId(recipe_id)},
+    {
+        "recipe_name": request.form.get['recipe_name'],
+        "category_name": request.form.get['category_name'],
+        "ingredients": request.form.get['ingredients'],
+        "method": request.form.get['method'],
+        "serves": request.form.get['serves'],
+        "time_of_prep": request.form.get['time_of_prep'],
+        "difficulty_level": request.form.get['difficulty_level']
+    })
+    return redirect(url_for('read_recipe'))
+
+
+
 if __name__ == '__main__':
         app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
