@@ -75,9 +75,14 @@ body {
     margin-right: auto;
 }
 
+.add-recipe-form {
+    padding-top: 30px;
+}
+
 /*------------------------------ myrecipes.html ------------------------------*/
 .my-recipes-title {
-    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: 22px;
 }
 
 .card-title {
@@ -94,11 +99,14 @@ body {
     margin-top: 10px;
     margin-bottom: 30px;
 }
-/*
-.add-icon {
-    font-size: 30px;
-    color: #62a5a1;
-    position: relative;
-    top: -68px;
-    left: -481px;
-}*/
+
+a .align-icon {
+    color: #408A85;
+    padding-top: 33px;
+    padding-left: 9px;
+    font-size: 20px;
+}
+
+.cat-row {
+    padding-bottom: 20px;
+}

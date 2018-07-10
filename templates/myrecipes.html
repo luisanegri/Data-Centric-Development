@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Welcome {{ username }} </h2>
-<h3 class="my-recipes-title">My Recipes</h3> 
-<a href="{{url_for('add_recipes')}}"><i class="fas fa-plus-circle add-icon"></i></a>
 
 <div class="row">
+<h3 class="my-recipes-title">My Recipes</h3> 
+<a href="{{url_for('add_recipes')}}"><i class="fas fa-plus-circle align-icon"></i></a>
+</div>
+<div class="row cat-row">
   <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Categories
@@ -27,18 +28,18 @@
     <div class="card-body">
       <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
       <div class="row">
-        <div class="col-md-2">
-            <div class="recipe-details"><i class="glip far fa-user"></i> {{recipe.serves }}</div>
-        </div>
-        <div class="col-md-6">
-            <div class="recipe-details"><i class="glip far fa-clock"></i>{{recipe.time_of_prep}}</div>
+        <div class="col-md-4">
+            <div class="recipe-info"><i class="glip far fa-user"></i> {{recipe.serves }}</div>
         </div>
         <div class="col-md-4">
-            <div class="recipe-details"><i class="glip fas fa-balance-scale"></i>{{recipe.difficulty_level}}</div>
+            <div class="recipe-info"><i class="glip far fa-clock"></i>{{recipe.time_of_prep}}</div>
+        </div>
+        <div class="col-md-4">
+            <div class="recipe-info"><i class="glip fas fa-balance-scale"></i>{{recipe.difficulty_level}}</div>
         </div>
       </div>  
           <div class="c-footer" style="text-align: center">
-            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Get Full Recipe</a>
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn btn-card">Get Full Recipe</a>
           </div>
       </div>  
     </div>
