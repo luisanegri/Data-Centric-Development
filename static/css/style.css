@@ -1,10 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Average+Sans|Roboto:400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Average+Sans|Roboto:400,500,700,900|Montserrat:400,500,600,700');
 
 body {
     font-family: 'Roboto' !important;
-    background-color: #edeeef !important;
+    background-color: #F2FBFA !important;
+}
+/*--------------------------------- base.html ---------------------------------*/
+
+.bg-green {
+    background-color: #62a5a1;
 }
 
+.navbar-nav {
+    float: right;
+}
+
+.cb-brand {
+    color: #fafafa !important;
+    font-family: Montserrat;
+    letter-spacing: 1px;
+}
+
+.nav-i {
+    font-family: Montserrat;
+    color: #fafafa !important;
+}
 /*------------------------------ readrecipe.html ------------------------------*/
 .inline-list {
     list-style-type: none;
@@ -61,6 +80,20 @@ body {
     padding-bottom: 30px;
 }
 
+.card-title {
+    color: #4D6595;
+}
+
+.btn-card {
+    background-color: #768BB4;
+    color: white;
+}
+
+.recipe-info {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 /*
 .add-icon {
     font-size: 30px;

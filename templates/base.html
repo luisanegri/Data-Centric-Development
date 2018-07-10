@@ -6,11 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CookBook App</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 </head>
 <body>
- 
+    
+<header>
+    <nav class="navbar navbar-expand-md bg-green navbar-light">
+      <a class="navbar-brand cb-brand" href="#">CookBook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-i" href="#">Home</a>
+          </li>    
+          <li class="nav-item">
+            <a class="nav-link nav-i" href="{{url_for('get_recipes')}}">My Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-i" href="{{url_for('add_recipes')}}">Add Recipes</a>
+          </li>
+          
+        </ul>
+      </div>  
+    </nav>
+</header>
     
     
     <!-- Main Content -->
@@ -21,6 +43,7 @@
     
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
