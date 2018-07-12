@@ -4,6 +4,21 @@ body {
     font-family: 'Roboto' !important;
     background-color: #F2FBFA !important;
 }
+
+/*-------------------------------- index.html --------------------------------*/
+.center-form{
+    margin-left: auto;
+    margin-right: auto;
+    
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#btn-form {
+    background-color: #768BB4;
+}
 /*--------------------------------- base.html ---------------------------------*/
 
 .bg-green {
@@ -115,13 +130,14 @@ a .align-icon {
     padding-bottom: 10px;
 }
 
-.icons-info {
+#icons-info {
     border-top: 1px solid;
+    
 }
 
-.card-info {
-    border-radius: 0 !important;
-    border-color: #408A85 !important;
+#card-info {
+    border-radius: 3px;
+    border-color: #408A85;
 }
 
 .glip1 {

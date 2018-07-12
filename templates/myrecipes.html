@@ -25,10 +25,10 @@
   <div class="card-group">
     {% for recipe in recipes %} 
   <div class="col-sm-6 col-xs-12 card-item">
-    <div class="card card-info">
+    <div class="card" id="card-info">
     <div class="card-body">
       <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
-      <div class="row icons-info">
+      <div class="row" id="icons-info">
         <div class="col-md-4">
             <div class="recipe-info"><i class="glip1 far fa-user"></i> {{recipe.serves }}</div>
         </div>
