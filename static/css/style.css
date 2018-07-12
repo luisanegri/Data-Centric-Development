@@ -30,17 +30,17 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #fafafa;
     
 }
 
 .recipe-details {
     float: left;
     padding: 10px;
-    text-align: center;
-    text-transform: uppercase;
     font-family: 'Average';
-    font-size: 15px;
+    font-size: 16px;
+    
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 
 .recipe-title-center {
@@ -109,4 +109,27 @@ a .align-icon {
 
 .cat-row {
     padding-bottom: 20px;
+}
+
+.card-item {
+    padding-bottom: 10px;
+}
+
+.icons-info {
+    border-top: 1px solid;
+}
+
+.card-info {
+    border-radius: 0 !important;
+    border-color: #408A85 !important;
+}
+
+.glip1 {
+    margin-left: 5px;
+}
+
+@media (max-width: 991px){
+    .card-item {
+        
+    }
 }
