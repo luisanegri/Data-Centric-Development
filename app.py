@@ -15,10 +15,15 @@ app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:27481/cook
 mongo = PyMongo(app)
 
 
-
-
+@app.route("/", methods=['GET','POST'])
+def index():
+    if request.method == "POST":
+        return redirect(url_for('get_recipes' ))
+    return render_template("index.html")
+       
 @app.route("/get_recipes")
 def get_recipes():
+        
         return render_template('myrecipes.html', recipes=mongo.db.recipes.find(),
         categories=mongo.db.categories.find())
     
