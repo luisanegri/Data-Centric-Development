@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+
 
 app.config["MONGO_DBNAME"] = 'cookbook_app'
 app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:27481/cookbook_app'
@@ -19,15 +19,21 @@ mongo = PyMongo(app)
 
 @app.route("/get_recipes")
 def get_recipes():
-        return render_template('myrecipes.html', recipes=mongo.db.recipes.find())
-        
-    
+        return render_template('myrecipes.html', recipes=mongo.db.recipes.find(),
+        categories=mongo.db.categories.find())
     
 
 @app.route("/add_recipes")
 def add_recipes():
     return render_template('addrecipes.html', categories=mongo.db.categories.find(), 
     difficulty=mongo.db.difficulty.find())
+    
+    
+    
+"""@app.route("/get_category/<category_id>")
+def get_category(category_id):
+    the_category=mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return redirect(url_for('get_recipes'))"""
     
     
     
@@ -55,6 +61,8 @@ def edit_recipe(recipe_id):
     all_dif_levels=mongo.db.difficulty.find()
     return render_template('editrecipe.html', recipe=the_recipe, categories=all_categories, difficulty=all_dif_levels)
     
+    
+    
 @app.route("/update_recipe/<recipe_id>", methods=['POST'])
 def update_recipe(recipe_id):
     recipes=mongo.db.recipes
@@ -70,17 +78,15 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('read_recipe'))
 
+
+
 @app.route("/delete_recipe/<recipe_id>", methods=['POST'])
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
 
-@app.route("/get_categories/<category_id>")
-def get_categories(category_id):
-    the_category=mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    all_categories=mongo.db.categories.find()
-    return redirect(url_for('get_recipes', category=the_category, categories=all_categories))
+
 
 
 
@@ -93,6 +99,7 @@ def get_categories(category_id):
 
 
 if __name__ == '__main__':
+        app.secret_key = 'mysecret'
         app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=True)
