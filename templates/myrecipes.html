@@ -6,30 +6,31 @@
 <h3 class="my-recipes-title">My Recipes</h3> 
 <a href="{{url_for('add_recipes')}}"><i class="fas fa-plus-circle align-icon"></i></a>
 </div>
-<div class="row cat-row">
-  <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Categories
-    </a>
-  
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<div class="row">
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1"></label>
+    <select class="form-control" id="category" name="category_name">
+      <option value="" disabled selected>Choose Category</option>
       {% for category in categories %}
-      <a class="dropdown-item" href="{{url_for('get_recipes', category_id=category._id)}}">{{category.category_name}}</a>
+      <option>{{category.category_name}}</option>
       {% endfor %}
-    </div>
-    
+    </select>
   </div>
+   
+    
 </div>
+
 <div class="row">
   <div class="card-group">
     {% for recipe in recipes %} 
-  <div class="col-sm-6 col-xs-12">
-    <div class="card">
+  <div class="col-sm-6 col-xs-12 card-item">
+    <div class="card card-info">
     <div class="card-body">
       <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
-      <div class="row">
+      <div class="row icons-info">
         <div class="col-md-4">
-            <div class="recipe-info"><i class="glip far fa-user"></i> {{recipe.serves }}</div>
+            <div class="recipe-info"><i class="glip1 far fa-user"></i> {{recipe.serves }}</div>
         </div>
         <div class="col-md-4">
             <div class="recipe-info"><i class="glip far fa-clock"></i>{{recipe.time_of_prep}}</div>
