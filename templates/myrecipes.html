@@ -6,41 +6,16 @@
 <h3 class="my-recipes-title">My Recipes</h3> 
 <a href="{{url_for('add_recipes')}}"><i class="fas fa-plus-circle align-icon"></i></a>
 </div>
-<div class="row">
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1"></label>
-    <select class="form-control" id="category" name="category_name">
-      <option value="" disabled selected>Choose Category</option>
-      {% for category in categories %}
-      <option>{{category.category_name}}</option>
-      {% endfor %}
-    </select>
-  </div>
-   
-    
-</div>
 
 <div class="row">
   <div class="card-group">
     {% for recipe in recipes %} 
-  <div class="col-sm-6 col-xs-12 card-item">
+  <div class="col-lg-4 col-sm-6 col-xs-12 card-item">
     <div class="card" id="card-info">
     <div class="card-body">
       <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
-      <div class="row" id="icons-info">
-        <div class="col-md-4">
-            <div class="recipe-info"><i class="glip1 far fa-user"></i> {{recipe.serves }}</div>
-        </div>
-        <div class="col-md-4">
-            <div class="recipe-info"><i class="glip far fa-clock"></i>{{recipe.time_of_prep}}</div>
-        </div>
-        <div class="col-md-4">
-            <div class="recipe-info"><i class="glip fas fa-balance-scale"></i>{{recipe.difficulty_level}}</div>
-        </div>
-      </div>  
           <div class="c-footer" style="text-align: center">
-            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn btn-card">Get Full Recipe</a>
+            <a href="{{url_for('read_recipe', recipe_id=recipe._id)}}" class="btn btn-card">View Recipe</a>
           </div>
       </div>  
     </div>

@@ -9,7 +9,6 @@ body {
 .center-form{
     margin-left: auto;
     margin-right: auto;
-    
     position: fixed !important;
     top: 50%;
     left: 50%;
@@ -18,6 +17,7 @@ body {
 
 #btn-form {
     background-color: #768BB4;
+    color: white;
 }
 /*--------------------------------- base.html ---------------------------------*/
 
@@ -42,30 +42,59 @@ body {
 /*------------------------------ readrecipe.html ------------------------------*/
 .inline-list {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    
+    text-align: center;
+}
+
+.recipe-info {
+    margin-bottom: 40px;
+    background-color: #fafafa;
 }
 
 .recipe-details {
-    float: left;
-    padding: 10px;
-    font-family: 'Average';
-    font-size: 16px;
-    
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.info-items {
+    flex: 0 0 110px;
+    border: 2px solid #768BB4;
+    border-radius: 50%;
+    width: 110px;
+    height: 100px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    margin: 20px;
+    text-align: center;
+    padding-top: 23px;
+}
+
+.info-details {
+    font-size: 20px;
+    font-weight: 700;
+    font-weight: 600;
+    line-height: 1;
+}
+
 
 .recipe-title-center {
     text-align: center;
     font-family: 'Roboto';
+    padding-top: 30px;
+    font-size: 26px;
 }
 
-.glip {
-    padding-right: 5px;
-    
+
+.recipe-ingredients {
+    list-style: none;
+    line-height: 2.5rem;
+}
+
+.form-btn {
+    padding-top: 20px;
 }
 
 /*------------------------------ addrecipes.html ------------------------------*/
@@ -74,6 +103,8 @@ body {
 .btn-add {
     margin-bottom: 20px;
     margin-top: 20px;
+    background-color: #768BB4;
+    color: white;
 }
 
 .add-recipe-title {
@@ -104,22 +135,27 @@ body {
     color: #4D6595;
 }
 
-.btn-card {
-    background-color: #768BB4;
-    color: white;
-}
-
-.recipe-info {
-    color: black;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
 a .align-icon {
     color: #408A85;
     padding-top: 33px;
     padding-left: 9px;
     font-size: 20px;
+}
+
+.card-group {
+    padding-top: 20px;
+}
+.btn-card {
+    background-color: #768BB4;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 22px;
+}
+
+.recipe-detail-info {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .cat-row {
@@ -130,22 +166,28 @@ a .align-icon {
     padding-bottom: 10px;
 }
 
-#icons-info {
-    border-top: 1px solid;
-    
+.card {
+    max-height: 140px;
+    min-height: 140px;
 }
 
 #card-info {
     border-radius: 3px;
-    border-color: #408A85;
 }
 
-.glip1 {
-    margin-left: 5px;
+.btn {
+    margin-top: 10px;
 }
 
-@media (max-width: 991px){
-    .card-item {
-        
+@media (max-width: 570px){
+    .card-group {
+    display: block;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    }
+    .my-recipes-title{
+        padding-left: 43px;
     }
 }

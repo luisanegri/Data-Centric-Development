@@ -1,38 +1,54 @@
 {% extends 'base.html' %}
 {% block content %} 
 
-
-    <h2 class="recipe-title-center">{{ recipe.category_name }}</h2>
     <h3 class="recipe-title-center">{{ recipe.recipe_name }}</h3>
-    <div class="section-one">
-        <ul class="inline-list">
-    <li class="recipe-details"><i class="glip far fa-user"></i>{{ recipe.serves }}</li>
-    <li class="recipe-details"><i class="glip far fa-clock"></i>{{ recipe.time_of_prep }}</li>
-    <li class="recipe-details"><i class="glip fas fa-balance-scale"></i>{{ recipe.difficulty_level }}</li>
-        </ul>
-    </div>
+   
+   <div class="recipe-info">
+       <div class="recipe-details">
+            <div class="info-items">
+               <span class="info-icon"><i class="fas fa-utensils"></i></span>
+               <div>{{recipe.category_name}}</div>
+           </div>
+           <div class="info-items">
+               <span class="info-icon"><i class="far fa-user"></i></span>
+               <div>{{recipe.serves}}</div>
+           </div>
+            <div class="info-items">
+               <span class="info-icon"><i class="fas fa-balance-scale"></i></span>
+               <div>{{recipe.difficulty_level}}</div>
+           </div>
+            <div class="info-items">
+               <span class="info-icon"><i class="fas fa-history"></i></span>
+               <div>{{recipe.time_of_prep}}</div>
+           </div>
+          
+       </div>
+   </div>
+   
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-sm-4">
-            <h2>Ingredients</h2>
+            <h2 class="my-recipes-title">Ingredients</h2>
             <li class="recipe-ingredients">{{ recipe.ingredients }}</li>
         </div>
     
         <div class="col-md-8 col-sm-8">
-            <h2>Method</h2>
-            {{ recipe.method }}
+            <h2 class="my-recipes-title">Method</h2>
+            <li class="recipe-ingredients">{{ recipe.method }}</li>
         </div>
     </div>
 </div>
-<div class="row">
-  <div class="col-sm-3">
-    <form action= "{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
-    <button type="submit" name="action" class="btn btn-default btn-add">Edit</button>
-    </form>
-    <form action= "{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
-    <button type="submit" name="action" class="btn btn-default btn-add">Delete</button>
-    </form>
-  </div>
+<div class="row form-btn">
+    <div class="col-sm-2">
+        <form action= "{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
+        <button type="submit" name="action" class="btn btn-default btn-add">Edit</button>
+        </form>
+    </div>
+    <div class="col-sm-2">
+        <form action= "{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
+        <button type="submit" name="action" class="btn btn-default btn-add">Delete</button>
+        </form>
+    </div>
 </div>
     
     {% endblock %}
