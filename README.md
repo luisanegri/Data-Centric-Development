@@ -8,8 +8,8 @@ Demo:
 
 ## Features
 
-* Add new recipes
-* Read recipes - name, category, level of difficulty, serves how many people, preparation time.
+* Create new recipes - recipe name, category, level of difficulty, serves how many people, preparation time, method, ingredients
+* Read recipes 
 * Edit recipes
 * Delete recipes
 
