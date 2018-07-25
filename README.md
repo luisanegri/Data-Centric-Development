@@ -4,14 +4,14 @@ Demo:
 
 ## Overview
 
-> Web application created to store recipes
+> Web application created to store you favaourite food recipes
 
 ## Features
 
-* Create
-* Read
-* Update
-* Delete
+* Add new recipes
+* Read recipes - name, category, level of difficulty, serves how many people, preparation time.
+* Edit recipes
+* Delete recipes
 
 ## Technologies Used
 
