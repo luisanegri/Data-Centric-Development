@@ -55,11 +55,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 30px;
 }
 
 .info-items {
     flex: 0 0 110px;
-    border: 2px solid #768BB4;
+    border: 2px solid #26736D;
     border-radius: 50%;
     width: 110px;
     height: 100px;
@@ -70,6 +71,10 @@ body {
     margin: 20px;
     text-align: center;
     padding-top: 23px;
+    background-color: #768BB4;
+    color: #fafafa;
+    font-family: 'Montserrat';
+    font-weight: bold;
 }
 
 .info-details {
@@ -187,7 +192,10 @@ a .align-icon {
     margin-right: auto;
     margin-left: auto;
     }
-    .my-recipes-title{
-        padding-left: 43px;
+}
+
+@media (max-width: 479px) {
+    .info-items{
+        margin: 6px;
     }
 }

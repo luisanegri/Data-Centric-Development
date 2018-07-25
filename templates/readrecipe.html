@@ -1,54 +1,48 @@
-{% extends 'base.html' %}
-{% block content %} 
+{% extends 'base.html' %} {% block content %}
 
-    <h3 class="recipe-title-center">{{ recipe.recipe_name }}</h3>
-   
-   <div class="recipe-info">
-       <div class="recipe-details">
-            <div class="info-items">
-               <span class="info-icon"><i class="fas fa-utensils"></i></span>
-               <div>{{recipe.category_name}}</div>
-           </div>
-           <div class="info-items">
-               <span class="info-icon"><i class="far fa-user"></i></span>
-               <div>{{recipe.serves}}</div>
-           </div>
-            <div class="info-items">
-               <span class="info-icon"><i class="fas fa-balance-scale"></i></span>
-               <div>{{recipe.difficulty_level}}</div>
-           </div>
-            <div class="info-items">
-               <span class="info-icon"><i class="fas fa-history"></i></span>
-               <div>{{recipe.time_of_prep}}</div>
-           </div>
-          
-       </div>
-   </div>
-   
+<h3 class="recipe-title-center">{{ recipe.recipe_name }}</h3>
+<div class="recipe-info">
+  <div class="recipe-details">
+    <div class="info-items">
+      <span class="info-icon"><i class="fas fa-utensils"></i></span>
+      <div>{{recipe.category_name}}</div>
+    </div>
+    <div class="info-items">
+      <span class="info-icon"><i class="far fa-user"></i></span>
+      <div>{{recipe.serves}}</div>
+    </div>
+    <div class="info-items">
+      <span class="info-icon"><i class="fas fa-history"></i></span>
+      <div>{{recipe.time_of_prep}}</div>
+    </div>
+  </div>
+</div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-4">
-            <h2 class="my-recipes-title">Ingredients</h2>
-            <li class="recipe-ingredients">{{ recipe.ingredients }}</li>
-        </div>
-    
-        <div class="col-md-8 col-sm-8">
-            <h2 class="my-recipes-title">Method</h2>
-            <li class="recipe-ingredients">{{ recipe.method }}</li>
-        </div>
+  <h5><mark>Difficulty Level:</mark> {{recipe.difficulty_level}}</h5>
+  <div class="row">
+    <div class="col-lg-4 col-sm-12">
+      <h2 class="my-recipes-title">Ingredients</h2>
+      <li class="recipe-ingredients">{{ recipe.ingredients }}</li>
     </div>
+    <div class="col-lg-8 col-sm-12">
+      <h2 class="my-recipes-title">Method</h2>
+      <li class="recipe-ingredients">{{ recipe.method }}</li>
+    </div>
+  </div>
 </div>
-<div class="row form-btn">
-    <div class="col-sm-2">
-        <form action= "{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
+<div class="form-btn">
+  <div class="row">
+    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6">
+      <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
         <button type="submit" name="action" class="btn btn-default btn-add">Edit</button>
-        </form>
+      </form>
     </div>
-    <div class="col-sm-2">
-        <form action= "{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
+    <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6">
+      <form action="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
         <button type="submit" name="action" class="btn btn-default btn-add">Delete</button>
-        </form>
+      </form>
     </div>
+  </div>
 </div>
-    
-    {% endblock %}
+
+{% endblock %}
