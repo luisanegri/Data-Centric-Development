@@ -8,7 +8,7 @@ Demo:
 
 ## Features
 
-* Create new recipes - recipe name, category, level of difficulty, serves how many people, preparation time, method, ingredients
+* Create new recipes - recipe name, category, level of difficulty, servings, preparation time, method, ingredients
 * Read recipes 
 * Edit recipes
 * Delete recipes
