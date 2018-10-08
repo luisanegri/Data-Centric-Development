@@ -4,11 +4,11 @@ Demo:
 
 ## Overview
 
-> Web application created to store you favaourite food recipes
+> Web application where users can create, read, edit and delete recipes. The data is stored on Mlab, a MongoDB cloud database service.
 
 ## Features
 
-* Create new recipes - recipe name, category, level of difficulty, serves how many people, preparation time, method, ingredients
+* Create new recipes - recipe name, category, level of difficulty, servings, preparation time, method, ingredients
 * Read recipes 
 * Edit recipes
 * Delete recipes
@@ -20,6 +20,10 @@ Demo:
 * MongoDB
 * Flask
 * Bootstrap 4
+
+## Testing
+
+
 
 ## Deployment
 
