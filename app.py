@@ -17,12 +17,32 @@ mongo = PyMongo(app)
 @app.route("/", methods=['GET','POST'])
 def index():
     if request.method == "POST":
-        return redirect(url_for('get_recipes' ))
+        return redirect(url_for('home'))
     return render_template("index.html")
+    
+@app.route('/home')
+def home():
+    return render_template("home.html")
        
+@app.route('/breakfast')
+def breakfast():        
+    return render_template("breakfast.html",recipes=mongo.db.recipes.find({"category_name":"Breakfast"}))
+
+@app.route('/lunch')
+def lunch():        
+    return render_template("lunch.html",recipes=mongo.db.recipes.find({"category_name":"Lunch"}))
+    
+@app.route('/snacks')
+def snacks():        
+    return render_template("snacks.html",recipes=mongo.db.recipes.find({"category_name":"Snacks"}))
+
+@app.route('/dinner')
+def dinner():        
+    return render_template("dinner.html",recipes=mongo.db.recipes.find({"category_name":"Dinner"}))
+
+
 @app.route("/get_recipes")
 def get_recipes():
-        
         return render_template('myrecipes.html', recipes=mongo.db.recipes.find(),
         categories=mongo.db.categories.find())
     
@@ -32,23 +52,12 @@ def add_recipes():
     return render_template('addrecipes.html', categories=mongo.db.categories.find(), 
     difficulty=mongo.db.difficulty.find())
     
-    
-    
-"""@app.route("/get_category/<category_id>")
-def get_category(category_id):
-    the_category=mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return redirect(url_for('get_recipes'))"""
-    
-    
-    
 @app.route("/insert_recipe", methods=['POST'])
 def insert_recipe():
     # get recipes collection
     recipes=mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
-
-
 
 @app.route("/read_recipe/<recipe_id>")
 def read_recipe(recipe_id):
