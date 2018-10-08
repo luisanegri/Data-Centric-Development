@@ -1,0 +1,40 @@
+{% extends 'base.html' %}{% block content %}
+
+<h2>Recipes by category</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="static/img/breakie.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <a href="{{url_for('breakfast')}}">Breakfast</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <a href="{{url_for('lunch')}}">Lunch</a>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6"> 
+         <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <a href="{{url_for('snacks')}}">Snacks</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6"> 
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <a href="{{url_for('dinner')}}">Dinner</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
