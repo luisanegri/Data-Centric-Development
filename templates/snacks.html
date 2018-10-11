@@ -1,17 +1,20 @@
 {% extends 'base.html' %}{% block content %}
+<h3 class="recipe-title">Snacks</h3>
 <div class="row">
-    <div class="card-group">
-        {% for recipe in recipes %} 
-            <div class="col-lg-4 col-sm-6 col-xs-12 card-item">
+{% for recipe in recipes %} 
+    <div class="col-lg-12">
+        <div class="card-group">
+            <div class="card-item">
               <div class="card" id="card-info">
-              <div class="card-body d-flex flex-column">
-                <a class="link-recipe" href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
-                <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
-                </a> 
+                <div class="card-body d-flex flex-column">
+                  <a class="link-recipe" href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
+                  <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
+                  </a> 
                 </div>  
               </div>
             </div>
-        {% endfor %}  
+        </div>
     </div>
+  {% endfor %}  
 </div>
 {% endblock %}
