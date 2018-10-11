@@ -2,11 +2,11 @@
 <h3 class="recipe-title">Breakfast</h3>
 <div class="row">
 {% for recipe in recipes %} 
-    <div class="col-lg-12">
+    <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="card-group">
             <div class="card-item">
-              <div class="card" id="card-info">
-                <div class="card-body d-flex flex-column">
+              <div class="card text-center bg-light mb-3" style="width: 12.5rem; height: 7rem;" id="card-info">
+                <div class="card-body">
                   <a class="link-recipe" href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
                   <h5 class="card-title" style="text-align: center">{{ recipe.recipe_name}}</h5>
                   </a> 
