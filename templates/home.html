@@ -1,38 +1,36 @@
 {% extends 'base.html' %}{% block content %}
 
-<h2>Recipes by category</h2>
+<h2 class="title" style="font-size: 1.4rem; margin: 20px 0 20px 0;">Recipes by category</h2>
 <div class="row">
-    <div class="col-md-6">
-        <div class="card" style="width: 18rem;">
+    <div class="col-md-4">
+        <div class="card card-home">
           <img class="card-img-top" src="static/img/breakie.jpeg" alt="Card image cap">
           <div class="card-body">
-            <a href="{{url_for('breakfast')}}">Breakfast</a>
+            <a href="{{url_for('breakfast')}}" class="category-link">Breakfast</a>
           </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card" style="width: 18rem;">
+    <div class="col-md-4">
+        <div class="card card-home">
           <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
           <div class="card-body">
-            <a href="{{url_for('lunch')}}">Lunch</a>
+            <a href="{{url_for('lunch')}}" class="category-link">Lunch</a>
           </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-6"> 
-         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
+    <div class="col-md-4"> 
+         <div class="card card-home">
+          <img class="card-img-top card-image" src="static/img/snacks.jpeg" alt="Card image cap">
           <div class="card-body">
-            <a href="{{url_for('snacks')}}">Snacks</a>
+            <a href="{{url_for('snacks')}}" class="category-link">Snacks</a>
           </div>
         </div>
     </div>
-    <div class="col-md-6"> 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
+    <div class="col-md-4"> 
+        <div class="card card-home">
+            <img class="card-img-top" src="static/img/dinner.jpeg" alt="Card image cap">
             <div class="card-body">
-                <a href="{{url_for('dinner')}}">Dinner</a>
+                <a href="{{url_for('dinner')}}" class="category-link">Dinner</a>
             </div>
         </div>
     </div>
