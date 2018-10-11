@@ -6,7 +6,7 @@
         <form action= "{{ url_for('insert_recipe') }}" method="POST">
         <div class="form-group fg">
         <label for="category_name">Category</label>
-        <select id="categories" name="category_name" class="form-control">
+        <select id="categories" name="category_name" class="form-control" required>
             <option value="" disabled selected>Choose Category</option>
               {% for category in categories %}
                   {% if category.category_name == recipe.category_name %}
@@ -21,27 +21,27 @@
 
   <div class="form-group fg">
     <label for="recipe_name">Recipe Name</label>
-    <input id="recipe_name" name="recipe_name" type="text" class="form-control" value="{{ recipe.recipe_name }}">
+    <input id="recipe_name" name="recipe_name" type="text" class="form-control" value="{{ recipe.recipe_name }}" required>
   </div>
   <div class="form-group fg">
     <label for="ingredients">Ingredients</label>
-    <textarea id="ingredients" name="ingredients" type="text" class="form-control">{{ recipe.ingredients }}</textarea>
+    <textarea id="ingredients" name="ingredients" type="text" class="form-control" required>{{ recipe.ingredients }}</textarea>
   </div>
   <div class="form-group fg">
     <label for="method">Method</label>
-    <textarea id="method"  name="method" type="text" class="form-control">{{ recipe.method }}</textarea>
+    <textarea id="method"  name="method" type="text" class="form-control" required>{{ recipe.method }}</textarea>
   </div>
   <div class="form-group fg">
     <label for="time_of_prep">Preparation Time</label>
-    <input id="time_of_prep" name="time_of_prep" type="text" class="form-control" value="{{ recipe.time_of_prep }}">
+    <input id="time_of_prep" name="time_of_prep" type="text" class="form-control" value="{{ recipe.time_of_prep }}" required>
   </div>
   <div class="form-group fg">
     <label for="serves">Serves</label>
-    <input id="serves" name="serves" type="text" class="form-control" value="{{ recipe.serves }}">
+    <input id="serves" name="serves" type="number" class="form-control" value="{{ recipe.serves }}" required>
   </div>
    <div class="form-group fg">
         <label for="difficulty_level">Difficulty Level</label>
-        <select id="difficulty" name="difficulty_level" class="form-control">
+        <select id="difficulty" name="difficulty_level" class="form-control" required>
           <option value="" disabled selected>Choose Difficulty Level</option>
           {% for dif in difficulty %}
           {% if dif.difficulty_level == recipe.difficulty_level %}
