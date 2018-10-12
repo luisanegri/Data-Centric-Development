@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 app.config["MONGO_DBNAME"] = 'cookbook_app'
-app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:2748                         /cookbook_app'
+app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:2748/cookbook_app'
 
 mongo = PyMongo(app)
 
