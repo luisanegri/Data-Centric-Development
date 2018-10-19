@@ -7,21 +7,14 @@ app = Flask(__name__)
 
 
 app.config["MONGO_DBNAME"] = 'cookbook_app'
-app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:2748/cookbook_app'
-
+app.config["MONGO_URI"] = 'mongodb://root:adminr00t@ds227481.mlab.com:27481/cookbook_app'
 mongo = PyMongo(app)
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def index():
-    if request.method == "POST":
-        return redirect(url_for('home'))
     return render_template("index.html")
 
-
-@app.route('/home')
-def home():
-    return render_template("home.html")
 
 
 @app.route('/breakfast')
@@ -106,7 +99,6 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
-
 
 if __name__ == '__main__':
         app.secret_key = 'mysecret'
