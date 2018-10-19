@@ -13,14 +13,14 @@
     
 <header>
     <nav class="navbar navbar-expand-md bg-green navbar-light">
-      <a class="navbar-brand cb-brand" href="{{url_for('home')}}">CookBook</a>
+      <a class="navbar-brand cb-brand" href="{{url_for('index')}}">CookBook</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link nav-i" href="{{url_for('all_recipes')}}">My Recipes</a>
+            <a class="nav-link nav-i" href="{{url_for('all_recipes')}}">Recipes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-i" href="{{url_for('add_recipes')}}">Add Recipes</a>
@@ -34,9 +34,7 @@
   {% block content %} {% endblock %}
 </div>
 
-<footer style="background-color: #62a5a1l; height: 200px;">
-  
-</footer>
+
     
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
