@@ -1,17 +1,40 @@
 {% extends 'base.html' %}{% block content %}
 
+
+<h2> Categories </h2>
 <div class="row">
-        <div class="col-sm-4 center-form">
-            <form method="POST">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" name="username" placeholder="Username" id="username">
-                </div>
-                <button type="submit" class="btn btn-block" id="btn-form">Log In</button>
-            </form>
-            <br>
+    <div class="col-md-4">
+        <div class="card card-home">
+          <img class="card-img-top" src="static/img/breakie.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <a href="{{url_for('breakfast')}}" class="category-link">Breakfast</a>
+          </div>
         </div>
     </div>
-    
+    <div class="col-md-4">
+        <div class="card card-home">
+          <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <a href="{{url_for('lunch')}}" class="category-link">Lunch</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4"> 
+         <div class="card card-home">
+          <img class="card-img-top card-image" src="static/img/snacks.jpeg" alt="Card image cap">
+          <div class="card-body">
+            <a href="{{url_for('snacks')}}" class="category-link">Snacks</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4"> 
+        <div class="card card-home">
+            <img class="card-img-top" src="static/img/dinner.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <a href="{{url_for('dinner')}}" class="category-link">Dinner</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
