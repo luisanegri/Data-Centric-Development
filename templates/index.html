@@ -1,40 +1,45 @@
 {% extends 'base.html' %}{% block content %}
-
-
-<h2> Categories </h2>
+<div class="jumbotron text-center" id="jumbotron-custom">
+  <div class="container">
+    <h1 class="display-4">Cookbook</h1>
+    <p class="lead">Share your recipes and keep them in only one place!</p>
+  </div>
+</div>
+<h2 class="title-category">Categories</h2>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 col-xs-12"> 
         <div class="card card-home">
           <img class="card-img-top" src="static/img/breakie.jpeg" alt="Card image cap">
-          <div class="card-body">
+          <div class="card-body" id="cb-bg">
             <a href="{{url_for('breakfast')}}" class="category-link">Breakfast</a>
           </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6 col-xs-12">  
         <div class="card card-home">
           <img class="card-img-top" src="static/img/lunch.jpeg" alt="Card image cap">
-          <div class="card-body">
+          <div class="card-body" id="cb-bg">
             <a href="{{url_for('lunch')}}" class="category-link">Lunch</a>
           </div>
         </div>
     </div>
-    <div class="col-md-4"> 
+    <div class="col-md-6 col-xs-12">  
          <div class="card card-home">
           <img class="card-img-top card-image" src="static/img/snacks.jpeg" alt="Card image cap">
-          <div class="card-body">
+          <div class="card-body" id="cb-bg">
             <a href="{{url_for('snacks')}}" class="category-link">Snacks</a>
           </div>
         </div>
     </div>
-    <div class="col-md-4"> 
+    <div class="col-md-6 col-xs-12"> 
         <div class="card card-home">
             <img class="card-img-top" src="static/img/dinner.jpeg" alt="Card image cap">
-            <div class="card-body">
+            <div class="card-body" id="cb-bg">
                 <a href="{{url_for('dinner')}}" class="category-link">Dinner</a>
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
 
