@@ -1,14 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<div class="row">
-  <h3 class="recipe-title">My recipes</h3> 
-</div>
+<h3 class="title-category title-smaller">Recipes</h3> 
 <div class="row">
 {% for recipe in recipes %} 
     <div class="col-lg-3 col-md-4 col-sm-6">
       <div class="card-group">
         <a class="link-recipe" href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
           <div class="card-item">
-            <div class="card text-center bg-light mb-3 border-secondary" id="card-info">
+            <div class="card text-center bg-light mb-3" id="card-info">
               <div class="card-body card-hover">
                   <h5 class="card-title">{{ recipe.recipe_name}}</h5>
               </div>  
