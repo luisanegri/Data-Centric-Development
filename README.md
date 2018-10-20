@@ -6,6 +6,14 @@ Demo: https://cookbook-app-flask.herokuapp.com/
 
 > A web application created in Python and Flask. 
 
+## UX
+
+This website was created with the intention to store and share recipes with other users.
+The home page shows the recipes categories, and allows the user to choose between Breakfast, Lunch, Dinner and Snacks. 
+When clicking on any category, the user can view a list of recipes from that specific category. The user can choose a specific recipe from the list where it will be displayed more details about the recipe such as: Category, Serving, Time of preparation, difficulty level, ingredients and cooking method.
+This page also allows the user to delete or edit the recipe.
+On the navbar the user have access to all recipes, without categories. There's also a link that brings to a form to add a new recipe.
+
 ## Features
 
 * Create new recipes - recipe name, category, level of difficulty, servings, preparation time, method, ingredients.
@@ -28,7 +36,6 @@ Demo: https://cookbook-app-flask.herokuapp.com/
     * Connects Flask to MongoDB
 
 ## Testing
-
 
 
 ## Deployment
