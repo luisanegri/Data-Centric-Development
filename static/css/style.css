@@ -178,6 +178,11 @@ body {
 
 /*------------------------------ myrecipes.html ------------------------------*/
 
+#btn-close-delete {
+  margin-top: -19px;
+  color: #3F3C5C;
+}
+
 .title-smaller {
   font-size: 1.35rem;
 }

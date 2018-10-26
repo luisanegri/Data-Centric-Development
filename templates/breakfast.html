@@ -1,18 +1,24 @@
 {% extends 'base.html' %}{% block content %}
 <h3 class="title-category title-smaller">Breakfast</h3>
-<div class="row">
 {% for recipe in recipes %} 
     <div class="col-lg-3 col-md-4 col-sm-6">
       <div class="card-group">
-        <a class="link-recipe" href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
           <div class="card-item">
             <div class="card text-center bg-light mb-3" id="card-info">
               <div class="card-body card-hover">
+                <div class="row">
+                  <form action="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
+                    <button type="submit" name="action" class="close" aria-label="Close" id="btn-close-delete">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </form>
+                </div>
+                <a class="link-recipe" href="{{url_for('read_recipe', recipe_id=recipe._id)}}">
                   <h5 class="card-title">{{ recipe.recipe_name}}</h5>
+                </a>
               </div>  
             </div>
           </div>
-        </a> 
       </div>
     </div>
   {% endfor %}  
