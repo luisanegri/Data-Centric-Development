@@ -1,33 +1,71 @@
 
-# CookBook App
-Demo: 
+# CookBook Web App
+Demo: https://cookbook-app-flask.herokuapp.com/
 
 ## Overview
 
-> Web application where users can create, read, edit and delete recipes. The data is stored on Mlab, a MongoDB cloud database service.
+> A web application created in Python and Flask. 
+
+## UX
+
+This website was created with the intention to store and share recipes with other users.
+The home page shows the recipes categories, and allows the user to choose between Breakfast, Lunch, Dinner and Snacks. 
+When clicking on any category, the user can view a list of recipes from that specific category. The user can choose a specific recipe from the list where it will be displayed more details about the recipe such as: Category, Serving, Time of preparation, difficulty level, ingredients and cooking method.
+This page also allows the user to delete or edit the recipe.
+On the navbar the user have access to all recipes, without categories. There's also a link that brings to a form to add a new recipe.
 
 ## Features
 
-* Create new recipes - recipe name, category, level of difficulty, servings, preparation time, method, ingredients
+* Create new recipes - recipe name, category, level of difficulty, servings, preparation time, method, ingredients.
 * Read recipes 
 * Edit recipes
 * Delete recipes
 
 ## Technologies Used
 
-* Python
-* Pymongo
-* MongoDB
-* Flask
-* Bootstrap 4
+* [Bootstrap](https://getbootstrap.com/)
+    * CSS framework to style and create responsive design 
+* [Python](https://www.python.org/)
+* [Flask](http://flask.pocoo.org/)
+    * Python microframework
+* [MongoDB](https://www.mongodb.com/)
+    * NoSQL database
+* [MLab](https://mlab.com/) 
+    * MongoDB cloud database service where the data is stored
+* [Flask-Pymongo](https://flask-pymongo.readthedocs.io/en/latest/)
+    * Connects Flask to MongoDB
 
 ## Testing
 
 
-
 ## Deployment
 
-* Heroku
+* This project was deployed at Heroku
 
-## To do:
-- Add images
+1. Create requirements.txt 
+
+        pip3 freeze --local requirements.txt
+        
+2. Create Procfile
+
+        echo web: python app.py > Procfile
+        
+3. Create [Heroku](https://www.heroku.com/) App 
+4. Set Config Vars adding IP and PORT on Heroku app settings
+
+        IP 0.0.0.0
+        PORT 5000
+        
+5. Login to Heroku on the terminal
+
+        Heroku login
+        
+6. Deploy to Heroku
+
+        Scale the app's web process to 1 dyno: heroku ps:scale web=1
+        git remote add https://git.heroku.com/cookbook-app-flask.git
+        git push heroku master
+
+
+
+
