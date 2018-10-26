@@ -10,24 +10,29 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-md bg-green navbar-light" id="navbar-custom">
-      <a class="navbar-brand cb-brand" href="{{url_for('index')}}">CookBook</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-light bg-green" id="navbar-custom">
+  <a class="navbar-brand cb-brand" href="{{url_for('index')}}">CookBook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link nav-i" href="{{url_for('index')}}"><i class="fas fa-home icon-nav"></i>Home <span class="sr-only">(current)</span></a>
+      </li>
+     <li class="nav-item">
             <a class="nav-link nav-i" href="{{url_for('all_recipes')}}"><i class="fas fa-list icon-nav"></i>All Recipes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-i" href="{{url_for('add_recipes')}}"><i class="fas fa-plus icon-nav"></i>Add Recipes</a>
           </li>
-        </ul>
-      </div>  
-    </nav>
-</header>
+
+    </ul>
+   
+  </div>
+</nav>
+
+
 <!-- Main Content -->
 <div class="container" id="main-container">
   <div id="main">

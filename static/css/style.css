@@ -12,13 +12,7 @@ html, body {
   height: 100%;
 }
 
-
-
 /*--------------------------------- base.html ---------------------------------*/
-
-#navbar-custom {
-  height: 45px;
-}
 
 .bg-green {
   background-color: #62a5a1;
@@ -279,7 +273,7 @@ a .align-icon {
 }
 
 
-
+/*------------------------------- Media Queries ------------------------------*/
 
 @media (max-width: 576px) {
   #jumbotron-custom {
