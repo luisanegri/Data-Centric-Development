@@ -104,7 +104,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  padding: 30px;
 }
 
 .info-items {
@@ -238,4 +238,18 @@ a .align-icon {
   background-color: #D5DDED;
   border-color: transparent !important;
   border: none !important;
+}
+
+
+
+
+@media (max-width: 576px) {
+  #jumbotron-custom {
+    padding: 55px 6px;
+  }
+  .info-items {
+        border-radius: 2%;
+        margin: -4px;
+        height: 95px;
+  }
 }
