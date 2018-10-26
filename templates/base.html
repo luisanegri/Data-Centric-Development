@@ -29,11 +29,25 @@
     </nav>
 </header>
 <!-- Main Content -->
-<div class="container">
+<div class="container" id="main-container">
+  <div id="main">
   {% block content %} {% endblock %}
+  </div>
 </div>
 
 
+<footer id="footer">
+  <div class="row">
+        <div class="m-auto ">
+          <p class="footer-content">Created by Luisa Negri</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="m-auto">
+          <a href="https://github.com/luisanegri"><i class="fab fa-github" id="footer-icon"></i></a>
+        </div>
+      </div>
+</footer>
     
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

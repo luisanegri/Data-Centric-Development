@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Average+Sans|Roboto:400,500,700,900|Montserrat:400,500,600,700');
-body {
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
   font-family: 'Roboto' !important;
   background-color: #F2FBFA !important;
   font-size: .9rem !important;
+  height: 100%;
 }
+
+
 
 /*--------------------------------- base.html ---------------------------------*/
 
@@ -32,6 +41,35 @@ body {
 
 .icon-nav {
   margin-right: 2px;
+}
+
+#main-container {
+  min-height: 100%;
+}
+
+#main {
+  overflow: hidden;
+  padding-bottom: 100px;
+  
+}
+
+#footer {
+  background-color: #62a5a1;
+  position: relative;
+  height: 70px;
+  margin-top: -70px;
+  clear: both;
+}
+
+.footer-content {
+  padding-top: 15px;
+  margin-bottom: 6px;
+  color: #fafafa;
+}
+
+#footer-icon {
+  font-size: 1.5rem;
+  color: #fafafa;
 }
 
 /*--------------------------------- index.html ---------------------------------*/
