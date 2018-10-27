@@ -16,7 +16,6 @@ def index():
     return render_template("index.html")
 
 
-
 @app.route('/breakfast')
 def breakfast():
     return render_template("breakfast.html", recipes=mongo.db.recipes.find({"category_name": "Breakfast"}))
@@ -100,8 +99,8 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
+
 if __name__ == '__main__':
-        app.secret_key = 'mysecret'
         app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
+        debug=False)
