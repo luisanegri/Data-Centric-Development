@@ -41,6 +41,7 @@ All the CRUD actions were tested and are working as it should.
 When updating a recipe the same is duplicated, this will be fixed later. I've added a delete button on the card so it can be deleted easily instead of the need to go to the recipe page to do so.
 The responsiveness was tested on every page.
 Every link was tested and works properly.
+All forms handle empty input fields.
 
 ## Deployment
 
